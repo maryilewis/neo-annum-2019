@@ -1,0 +1,186 @@
+body {
+    background: #010101;
+    color: #fefefe;
+    font-family: "Comic Sans", monospace;
+}
+
+.content {
+max-width: 400px;
+margin: auto;
+}
+h1 {
+color: white;
+text-shadow: 2px 2px 5px hotpink;
+}
+h2 {
+text-shadow: 0px 0px 2px;
+}
+header {
+border-bottom: 2px solid hotpink;
+color: hotpink;
+}
+
+h1, .subheader {
+display: inline-block;
+}
+.lime {
+color: lime;
+}
+.lime {
+color: lime;
+}
+.cyan {
+color: cyan;
+}
+footer {
+color: blueviolet;
+border-top: 2px solid blueviolet
+}
+section {
+text-align: left;
+padding-bottom: 2em;
+}
+
+.flicker.cyan {
+animation: flicker-cyan 4s infinite;
+}
+@keyframes flicker-cyan {
+/* this will happen over 5 seconds */
+0% {
+color: cyan;
+}
+88% {
+color: cyan;
+}
+/* 90% {
+color: black;
+}
+92% {
+color: cyan;
+}
+94% {
+color: black;
+}
+96% {
+color: cyan;
+} */
+100% {
+color: black;
+}
+}
+
+.flicker.lime {
+animation: flicker-lime 4s infinite;
+}
+@keyframes flicker-lime {
+/* this will happen over 5 seconds */
+0% {
+color: lime;
+}
+88% {
+color: lime;
+}
+/* 90% {
+color: black;
+}
+92% {
+color: lime;
+}
+94% {
+color: black;
+}
+96% {
+color: lime;
+} */
+100% {
+color: black;
+}
+}
+
+.cyan .pw {
+color: cyan !important;
+}
+.lime .pw {
+color: lime !important;
+}
+.hotpink .pw {
+color: hotpink !important;
+}
+
+.teal {
+color: teal;
+}
+.input {
+background-color:#010101;
+font-size: 1em;
+font-family: monospace;
+border: 2px solid teal;
+color: cyan;
+padding: .25em .5em;
+}
+.button {
+background-color:#010101;
+font-size: 1em;
+font-family: monospace;
+border: 2px solid teal;
+color: cyan;
+padding: .25em .5em;
+}
+.inline-block * {
+display: inline-block;
+}
+.audible-only {
+position:fixed;
+right: -10000px;
+}
+.progress {
+display: flex;
+justify-content: space-around;
+}
+.progress-node {
+margin-top: 1em;
+height: 25px;
+width: 25px;
+border-radius: 50%;
+border: 2px solid teal;
+}
+.progress-node.complete, .progress-node.current {
+border: 2px solid cyan;
+box-shadow: 0 2px 2px 0 5px cyan;
+}
+.progress-node.complete {
+background-color: cyan;
+}
+.progress-node.current {
+animation: fade-cyan 3s infinite;
+}
+@keyframes fade-cyan {
+/* this will happen over 5 seconds */
+0% {
+background-color: black;
+}
+50% {
+background-color: cyan;
+}
+100% {
+background-color: black;
+}
+}
+
+a {
+    color: cyan;
+}
+.breadcrumbs {
+    color: hotpink;
+}
+
+#feedback {
+    color: cyan;
+}
+#clue {
+    color: lightgray;
+}
+
+.complete {
+    text-decoration: line-through;
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>alt.lang.syne</title>
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <header class="color-1">
+      <div class="content">
+        <h1>alt.lang.syne</h1>
+        <div class="subheader">Finest drinks and dancing in the sub-sewer levels</div>
+      </div>
+    </header>
+    <section id="task-1">
+            <div class="content">
+        <a href="index.html" class="breadcrumbs">Back</a>
+        <p>This is a description of what you should enter into the box below.</p>
+        <form id="puzzle-form">
+            <div>
+                <label for="answer">What's the answer?</label>
+            </div>
+            <div class="inline-block">
+                <input id="answer" name="answer" class="input" type="text" placeholder="your answer" />
+                <input type="submit" id="submit" class="button" value="Submit">
+            </div>
+        </form>
+        <div id="feedback"></div>
+        <div id="clue"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="content">
+            Montgomery Arcology<br>Level 924
+        </div>
+    </footer>
+    <script>
+        var puzzleId = "puzzle5";
+        var correctAnswerValue = "5678";
+
+        var storedAnswer = localStorage.getItem(puzzleId);
+        if(storedAnswer) {
+            console.debug(storedAnswer);
+            correctAnswer(storedAnswer);
+        }
+
+        $("#puzzle-form").submit(function () {
+            // client side validation is inherently insecure
+            var textAnswer = $("#answer").val();
+            var parsedAnswer = textAnswer.toLowerCase().replace(/[^a-zA-Z\d]/, "");
+            if(parsedAnswer === correctAnswerValue) {
+                localStorage.setItem(puzzleId, textAnswer);
+                return correctAnswer(textAnswer);
+            } else {
+                $("#feedback").text(textAnswer + " is not the right answer. Try again!");
+            }
+            return false;
+        });
+
+        function correctAnswer(answer) {
+            $("#puzzle-form").hide();
+            $("#feedback").text(answer + " is correct!");
+            $("#clue").text("Here is your clue!");
+            return false;
+        }
+    </script>
+</body>
+</html>
