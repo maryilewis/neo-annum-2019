@@ -42,28 +42,28 @@ padding-bottom: 2em;
 }
 
 .flicker.cyan {
-animation: flicker-cyan 4s infinite;
+animation: flicker-cyan 2.5s infinite;
 }
 @keyframes flicker-cyan {
 /* this will happen over 5 seconds */
 0% {
 color: cyan;
 }
-88% {
+50% {
 color: cyan;
 }
-/* 90% {
+60% {
 color: black;
 }
-92% {
-color: cyan;
-}
-94% {
+70% {
 color: black;
 }
-96% {
+80% {
 color: cyan;
-} */
+}
+90% {
+color: cyan;
+}
 100% {
 color: black;
 }
@@ -169,6 +169,9 @@ background-color: black;
 
 a {
     color: cyan;
+}
+.lime a {
+    color: lime;
 }
 .breadcrumbs {
     color: hotpink;

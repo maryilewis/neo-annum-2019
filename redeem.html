@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>alt.lang.syne</title>
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <header class="color-1">
+      <div class="content">
+        <h1>alt.lang.syne</h1>
+        <div class="subheader">Finest drinks and dancing in the sub-sewer levels</div>
+      </div>
+    </header>
+
+    <section id="menu-section" class="cyan">
+        <div class="content">
+            <P>Do not click these links! The authorized prize distributor will click these when giving you your prizes.</P>
+
+            <div class="lime">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle7')" id="puzzle7">Dog collar?</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle9')"  id="puzzle9">The Fuzz</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle8')"  id="puzzle8">The Don Himself</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cyan">
+
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle1')"  id="puzzle1">Puzzle 1</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle2')"  id="puzzle2">Puzzle 2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="redeem('puzzle3')"  id="puzzle3">Puzzle 3</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer>
+      <div class="content">
+        Montgomery Arcology<br>Level 924<br>
+        <a href="index.html">back</a>
+      </div>
+    </footer>
+   
+    <script>
+        function initStyles() {
+            for(var i = 1; i < 10; i++) {
+                var puzzleId = "puzzle" + i;
+                var storedAnswer = localStorage.getItem(puzzleId);
+                var redeemed = localStorage.getItem(puzzleId + "Redeemed");
+                console.log("puzzle id", puzzleId, storedAnswer);
+                if (storedAnswer) {
+                    $("#" + puzzleId).addClass("complete");
+                }
+                if(redeemed) {
+                    var text = $("#" + puzzleId).text() + " - redeemed";
+                    $("#" + puzzleId).text(text);
+                }
+            }
+            return false;
+        }
+        initStyles();
+
+        function redeem(puzzleId) {
+            var storedAnswer = localStorage.getItem(puzzleId);
+            if(storedAnswer) {
+                localStorage.setItem(puzzleId + "Redeemed", true);
+                var text = $("#" + puzzleId).text() + " - redeemed";
+                $("#" + puzzleId).text(text);
+            }
+            return false;
+        }
+
+        
+    </script>
+  </body>
+  
+</html>

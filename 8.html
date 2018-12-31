@@ -14,10 +14,15 @@
         <div class="subheader">Finest drinks and dancing in the sub-sewer levels</div>
       </div>
     </header>
-    <section id="task-1">
+    <section class="lime">
             <div class="content">
         <a href="index.html" class="breadcrumbs">Back</a>
-        <p>Find the code </p>
+        <p class="flicker cyan">
+            The Don! The leader of Resolutions Inc! <span class="pw">Da</span>shing! Ki<span class="pw">n</span>d! <span class="pw">G</span>en<span class="pw">erous!</span>
+        </p>
+        <p>
+
+        </p>
         <form id="puzzle-form">
             <div>
                 <label for="answer">What's the code?</label>
@@ -40,6 +45,7 @@
     <script>
         var puzzleId = "puzzle8";
         var correctAnswerValue = "1234";
+        var clue = "I hope you didn't have to ";
 
         var storedAnswer = localStorage.getItem(puzzleId);
         if(storedAnswer) {
@@ -54,6 +60,8 @@
             if(parsedAnswer === correctAnswerValue) {
                 localStorage.setItem(puzzleId, textAnswer);
                 return correctAnswer(textAnswer);
+            } else if(parsedAnswer == "dangerous") {
+                $("#feedback").text(textAnswer + " isn't the answer, it was a subtle commentary on the nature of The Don. He has the answer, I told you that. Gosh.");
             } else {
                 $("#feedback").text(textAnswer + " is not the right answer. Try again!");
             }
@@ -63,7 +71,7 @@
         function correctAnswer(answer) {
             $("#puzzle-form").hide();
             $("#feedback").text(answer + " is correct!");
-            $("#clue").text("Here is your clue!");
+            $("#clue").text(clue);
             return false;
         }
     </script>
