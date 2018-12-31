@@ -38,7 +38,7 @@
         </div>
     </footer>
     <script>
-        var puzzleId = "puzzle2";
+        var puzzleId = "puzzle1";
         var correctAnswerValue = "downtherabbithole";
         var clue = "At the time it all seemed quite natural.";
 
@@ -51,7 +51,9 @@
         $("#puzzle-form").submit(function () {
             // client side validation is inherently insecure
             var textAnswer = $("#answer").val();
-            var parsedAnswer = textAnswer.toLowerCase().replace(/[^a-zA-Z\d]/, "");
+            console.log("textAnswer", textAnswer);
+            var parsedAnswer = textAnswer.toLowerCase().replace(/[^a-zA-Z\d]/g, "");
+            console.log("parsedAnswer", parsedAnswer);
             if(parsedAnswer === correctAnswerValue) {
                 localStorage.setItem(puzzleId, textAnswer);
                 return correctAnswer(textAnswer);
