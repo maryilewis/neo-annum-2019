@@ -187,3 +187,9 @@ a {
 .complete {
     text-decoration: line-through;
 }
+.tiny {
+    font-size: 6px;
+}
+.hotpink {
+    color: hotpink;
+}

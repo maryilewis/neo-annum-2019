@@ -17,7 +17,7 @@
     <section class="lime">
             <div class="content">
         <a href="index.html" class="breadcrumbs">Back</a>
-        <p>This is a description of what you should enter into the box below.</p>
+        <p>One of the codes is hidden on an enforcer agent of a furry nature.</p>
         <form id="puzzle-form">
             <div>
                 <label for="answer">What's the code?</label>
@@ -38,7 +38,8 @@
     </footer>
     <script>
         var puzzleId = "puzzle7";
-        var correctAnswerValue = "1234";
+        var correctAnswerValue = "5573";
+        var clue = "I hope your experience with the DOG was not too harrowing."
 
         var storedAnswer = localStorage.getItem(puzzleId);
         if(storedAnswer) {
@@ -62,7 +63,7 @@
         function correctAnswer(answer) {
             $("#puzzle-form").hide();
             $("#feedback").text(answer + " is correct!");
-            $("#clue").text("Here is your clue!");
+            $("#clue").text(clue);
             return false;
         }
     </script>

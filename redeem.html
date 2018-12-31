@@ -66,8 +66,8 @@
                 var storedAnswer = localStorage.getItem(puzzleId);
                 var redeemed = localStorage.getItem(puzzleId + "Redeemed");
                 console.log("puzzle id", puzzleId, storedAnswer);
-                if (storedAnswer) {
-                    $("#" + puzzleId).addClass("complete");
+                if(!storedAnswer) {
+                    $("#" + puzzleId).remove();
                 }
                 if(redeemed) {
                     var text = $("#" + puzzleId).text() + " - redeemed";
